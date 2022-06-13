@@ -1,0 +1,63 @@
+﻿@using WebApplication1.Models
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+@model Car
+
+<div class="container-fluid">
+    <form method="post" >
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="BuyPrice"></label>
+                <input asp-for="BuyPrice" class="form-control" >
+            </div>
+                <div class="form-group col-md-6">
+                <label asp-for="SellPrice"></label>
+                <input asp-for="SellPrice" class="form-control" >
+            </div>
+                <div class="form-group col-md-6">
+                <label asp-for="Model"></label>
+                <input asp-for="Model" class="form-control" >
+            </div>
+                
+                <div class="form-group col-md-6">
+                <label asp-for="Doors"></label>
+                <input asp-for="Doors" class="form-control" >
+            </div>
+
+                
+                <div class="form-group col-md-6">
+                <label asp-for="Seats"></label>
+                <input asp-for="Seats" class="form-control" >
+            </div>
+
+                
+                <div class="form-group col-md-6">
+                <label asp-for="Luggage"></label>
+                <input asp-for="Luggage" class="form-control" >
+            </div>
+                <div class="form-group col-md-6">
+                <label asp-for="AirsConditioning"></label>
+                <input asp-for="AirsConditioning" class="form-control" >
+            </div>
+                       
+                <div class="form-group col-md-6">
+                <label asp-for="MinimumAge"></label>
+                <input asp-for="MinimumAge" class="form-control" >
+            </div>
+                <div class="form-group col-md-6">
+                <label asp-for="CategoryId"></label>
+                <input asp-for="CategoryId" class="form-control" >
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</div>
+
+
+

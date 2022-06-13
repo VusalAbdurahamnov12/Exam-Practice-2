@@ -1,0 +1,58 @@
+﻿@using WebApplication1.Models
+@using WebApplication1.ViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+@model HomeVm
+
+<div class="container-fluid">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <h1>Tables</h1>
+        <a asp-action="Create" class="btn btn-primary">Create</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Model</th>
+                <th scope="col">BuyPrice</th>
+                <th scope="col">SellPrice</th>
+                <th scope="col">Doors</th>
+                 <th scope="col">seats</th>
+                 <th scope="col">Lugage</th>
+                 <th scope="col">aircoidnin</th>
+                 <th scope="col">MinimumAge</th>
+                 <th scope="col">CategoryId</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model.Cars)
+            {
+                <tr>
+                    <th scope="row">@car.Id</th>
+                    <td>@car.BuyPrice</td>
+                    <td>@car.SellPrice</td>
+                    <td>@car.Doors  </td>
+                    <td>@car.Seats</td>
+                    <td>@car.Luggage</td>
+                    <td>@car.AirsConditioning</td>
+                    <td>@car.MinimumAge</td>
+                    <td>
+                        
+                        <a asp-action="Update"  asp-route-id="@car.Id" class="btn btn-warning">Edit</a>
+                        <a type="submit" asp-action="Delete" asp-route-id="@car.Id" class="btn btn-danger btn-sweet-delete">Delete</a>
+                    </td>
+                </tr>
+            }
+            @foreach (var item in Model.Categories)
+           {
+               <td>@item.Name</td>
+           }
+
+        </tbody>
+    </table>
+</div>
+
